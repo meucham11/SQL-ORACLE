@@ -1,0 +1,13 @@
+# 여러가지 유/무료 MySQL client
+- https://www.quora.com/What-is-the-best-MySQL-client-for-Mac-OS-X-or-Windows
+
+# Workbench 다운로드
+- https://dev.mysql.com/downloads/workbench/    로그인 안해도됨.(No thanks, just start my download. 클릭)
+
+실행후 MySQL Connections 옆의 + 클릭
+connection name : my server
+hostname은 현재 workbench가 설치된 컴퓨터의 mysql 서버임
+test해보고 비밀번호는 bitnami에서 설정했던 비번 그대로 입력해보고 최종적으로 ok 누르면 계정 생성
+접속
+
+database 는 왼쪽 schemas에서 확인이 가능하다.

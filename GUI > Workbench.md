@@ -12,9 +12,13 @@ test해보고 비밀번호는 bitnami에서 설정했던 비번 그대로 입력
 
 database 는 왼쪽 schemas에서 확인이 가능하다.
 
-<div>
+
 <img width="712" alt="1" src="https://user-images.githubusercontent.com/34879309/71427383-7f250200-26fb-11ea-8d53-51fa5db11b4d.PNG">
+  
 <img width="503" alt="2" src="https://user-images.githubusercontent.com/34879309/71427392-92d06880-26fb-11ea-85be-6a858d7bfce9.PNG">
+
 <img width="197" alt="3" src="https://user-images.githubusercontent.com/34879309/71427393-949a2c00-26fb-11ea-84e3-5bd0b75e3c1e.PNG">
+
 <img width="281" alt="4" src="https://user-images.githubusercontent.com/34879309/71427394-9532c280-26fb-11ea-994f-edf5e9389630.PNG">
-</div>
+
+

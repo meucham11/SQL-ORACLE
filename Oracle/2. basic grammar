@@ -1,0 +1,8 @@
+```sql
+SELECT <col>
+   FROM <talbe>
+   
+   WHERE <a> = 'str'
+       AND/OR <b> > 15
+   ORDER BY <a> DESC, <b> ASC
+```

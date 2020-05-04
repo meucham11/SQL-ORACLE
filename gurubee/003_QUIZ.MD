@@ -2,7 +2,7 @@
 http://www.gurubee.net/lecture/2194
 
 내 코드
-'''SQL
+'''ORACLE
 SELECT NO, MIN(DT) FROM_DT, MAX(DT) TO_DT, COUNT(*)CNT
     FROM(
         SELECT NO, DT,
@@ -21,3 +21,4 @@ SELECT NO, MIN(DT) FROM_DT, MAX(DT) TO_DT, COUNT(*)CNT
   GROUP BY NO, GRP
   ORDER BY NO,FROM_DT;
 '''
+

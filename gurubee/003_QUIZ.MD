@@ -1,7 +1,7 @@
 # 연속된 날짜를 하나의 그룹으로 표현해 보자
-http://www.gurubee.net/lecture/2194
+출처 : http://www.gurubee.net/lecture/2194
 
-내 코드
+#### 내 코드
 ```SQL
 SELECT NO, MIN(DT) FROM_DT, MAX(DT) TO_DT, COUNT(*)CNT
     FROM(
@@ -20,4 +20,15 @@ SELECT NO, MIN(DT) FROM_DT, MAX(DT) TO_DT, COUNT(*)CNT
         )
   GROUP BY NO, GRP
   ORDER BY NO,FROM_DT;
+```
+
+
+#### 해답
+```sql
+SELECT NO,
+       MIN(DT) FROM_DT,
+       MAX(DT) TO_DT,
+       COUNT(*) CNT
+    FROM (SELECT * FROM T ORDER BY NO, DT)
+    GROUP BY NO, TO_DATE(DT, 'yyyymmdd') - ROWNUM
 ```

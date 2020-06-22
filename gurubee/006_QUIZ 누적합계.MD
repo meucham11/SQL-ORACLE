@@ -50,7 +50,7 @@ SELECT SEQ, AMT,
 --위와같이 할 경우 절차적인 주행방식이 아니므로 MODEL을 사용하자 PL/SQL을 쓴느것도 정답
 - MODEL : MODEL 기능을 사용하겠다고 선언하는 부분입니다.
 - DIMENSION BY (seq) : 레코드를 구별하는 키를 선언하는 부분입니다.
-- MEASURES (amt, 0 result) : 키가 아닌 다른 항목들을 표시합니다.
+- MEASURES (amt, 0 result) : 키가 아닌 다른 항목들을 표시합니다. 새로 계산되는 컬럼명 명시
 - RULES () : 여기서는 배열 구조의 값을 지정하는 구문입니다.
 
 SELECT *
@@ -64,4 +64,27 @@ RULES AUTOMATIC ORDER
 ORDER BY SEQ
 ;
 
+```
+
+```SQL
+-- MODEL 
+select col_term
+     , col_sal
+  from (select 1 num, '200701' term, 1000000 salary from dual union all
+        select 2 num, '200702' term, 2000000 salary from dual union all
+        select 3 num, '200703' term, 1500000 salary from dual union all
+        select 4 num, '200704' term, 1900000 salary from dual union all
+        select 5 num, '200705' term, 2300000 salary from dual union all
+        select 6 num, '200706' term, 3000000 salary from dual          )
+ MODEL
+ DIMENSION BY (term col_term)
+ MEASURES ( salary col_sal )
+ RULES (
+         col_sal['분기1'] = col_sal['200701'] + col_sal['200702'] + col_sal['200703']
+       , col_sal['분기2'] = col_sal['200704'] + col_sal['200705'] + col_sal['200706']
+       , col_sal['평균' ] = AVG(col_sal) [ col_term BETWEEN '200701' AND '200706' ]
+       , col_sal['합계' ] = SUM(col_sal) [ col_term BETWEEN '200701' AND '200706' ]
+       )
+ order by 1
+;
 ```

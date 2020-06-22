@@ -65,6 +65,8 @@ ORDER BY SEQ
 ;
 
 ```
+<img width="112" alt="캡처4" src="https://user-images.githubusercontent.com/34879309/85258073-ca00b600-b4a1-11ea-87e5-50f925fa1cb6.PNG">
+
 
 ```SQL
 -- MODEL 응용

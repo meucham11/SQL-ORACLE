@@ -39,7 +39,10 @@ SELECT SEQ, AMT,
 SELECT SEQ, AMT,
     SUM(DECODE(SIGN(AMT),-1,0,1,AMT)) OVER(ORDER BY SEQ) RESULT_3
     FROM T;
+```
 <img width="124" alt="캡처3" src="https://user-images.githubusercontent.com/34879309/85252344-7ccb1700-b496-11ea-85ed-58ab782dc703.PNG">
+----
+```
 --위와같이 할 경우 절차적인 주행방식이 아니므로 MODEL을 사용하자 PL/SQL을 쓴느것도 정답
 - MODEL : MODEL 기능을 사용하겠다고 선언하는 부분입니다.
 - DIMENSION BY (seq) : 레코드를 구별하는 키를 선언하는 부분입니다.

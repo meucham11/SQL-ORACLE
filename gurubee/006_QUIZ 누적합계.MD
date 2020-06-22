@@ -67,7 +67,7 @@ ORDER BY SEQ
 ```
 
 ```SQL
--- MODEL 
+-- MODEL 응용
 select col_term
      , col_sal
   from (select 1 num, '200701' term, 1000000 salary from dual union all

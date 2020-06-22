@@ -1,6 +1,38 @@
 출처 : http://www.gurubee.net/lecture/2204
 
+----
+
 ```SQL
+CREATE TABLE code AS
+(
+  SELECT 1 cd, '마이크로' nm FROM dual
+  UNION ALL SELECT 2, '소프트' FROM dual
+  UNION ALL SELECT 3, '웨어' FROM dual
+);
+ 
+CREATE TABLE data AS
+(
+  SELECT '20120101' dt, 1 cd, 10 v FROM dual
+  UNION ALL SELECT '20120101', 2, 20 FROM dual
+  UNION ALL SELECT '20120101', 2, 21 FROM dual
+  UNION ALL SELECT '20120101', 2, 22 FROM dual
+  UNION ALL SELECT '20120101', 3, 30 FROM dual
+  UNION ALL SELECT '20120102', 1, 10 FROM dual
+  UNION ALL SELECT '20120102', 3, 30 FROM dual
+  UNION ALL SELECT '20120104', 1, 10 FROM dual
+  UNION ALL SELECT '20120104', 2, 40 FROM dual
+  UNION ALL SELECT '20120105', 3, 50 FROM dual
+);
+
+SELECT D.DT
+    ,  NVL(C.NM,'소계') NM
+    ,  NVL(SUM(D.V),0) V
+    FROM CODE C
+    LEFT OUTER JOIN DATA D
+    PARTITION BY (D.DT)
+        ON C.CD=D.CD
+    GROUP BY D.DT, ROLLUP((C.CD,C.NM))
+;
 
 ```
 

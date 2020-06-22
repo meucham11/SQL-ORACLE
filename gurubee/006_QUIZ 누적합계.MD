@@ -1,7 +1,7 @@
 출처 : http://www.gurubee.net/lecture/2203
 
 -------------------------------------------------
-```oracle
+```SQL
 CREATE TABLE t AS
     SELECT 1 seq, -2000 amt FROM dual
     UNION ALL SELECT 2, 4000 FROM dual

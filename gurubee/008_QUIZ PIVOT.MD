@@ -1,9 +1,6 @@
 출처 : http://www.gurubee.net/lecture/2214
 ----
-```
-이해가 잘 가지는 않는다.
-MIN부분
-```
+
 
 ```SQL
 WITH t AS

@@ -16,3 +16,4 @@ SELECT EMPNO, ENAME, LEVEL, MGR
   CONNECT BY PRIOR EMPNO = MGR
   ORDER SIBLINGS BY EMPNO
 ```
+<img width="333" alt="캡처1" src="https://user-images.githubusercontent.com/34879309/85370905-6a221200-b56a-11ea-9579-bfc1501499e6.PNG">

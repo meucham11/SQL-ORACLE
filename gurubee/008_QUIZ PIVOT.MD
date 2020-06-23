@@ -72,6 +72,10 @@ SELECT GB1, GB2,
 ```
 <img width="168" alt="캡처3" src="https://user-images.githubusercontent.com/34879309/85366828-106a1980-b563-11ea-9586-16904aba291b.PNG">
 
+
+----
+****피봇 이용
+
 ```SQL
 --음.. 잘 이해가 되질 않는구만 
 

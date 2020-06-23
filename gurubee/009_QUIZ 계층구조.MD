@@ -2,21 +2,17 @@
 
 ----
 
-```SQL
-
+```
+조인같은걸 할줄 알았는데 함수가 있었다.
+SELECT 절에 PRIOR과 SYS_CONNECT_BY_PATH
 ```
 
-
 ```SQL
-
-```
-
-
-```SQL
-
-```
-
-
-```SQL
-
+SELECT EMPNO, ENAME, LEVEL, MGR
+    , PRIOR ENAME MGR_ENAME
+    , SUBSTR(SYS_CONNECT_BY_PATH(ENAME,'-'),2) ENAMES
+    FROM EMP
+  START WITH MGR IS NULL
+  CONNECT BY PRIOR EMPNO = MGR
+  ORDER SIBLINGS BY EMPNO
 ```

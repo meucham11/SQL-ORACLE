@@ -71,3 +71,23 @@ SELECT GB1, GB2,
 ;
 ```
 <img width="168" alt="캡처3" src="https://user-images.githubusercontent.com/34879309/85366828-106a1980-b563-11ea-9586-16904aba291b.PNG">
+
+```SQL
+--음.. 잘 이해가 되질 않는구만 
+
+WITH t AS
+(
+SELECT CHR(LEVEL + 64) c
+     , LEVEL v
+  FROM dual
+CONNECT BY LEVEL <= 26
+)
+SELECT *
+    FROM(SELECT *
+            FROM(SELECT C, TO_CHAR(V) V, CEIL(V/7) GB1, MOD(V-1,7)+1 GB3
+                    FROM T
+            ) UNPIVOT(V FOR GB2 IN (C AS 1, V AS 2))
+    )PIVOT(MIN(V) FOR GB3 IN (1 V1, 2 V2, 3 V3, 4 V4, 5 V5,6 V6, 7 V7))
+ORDER BY 1,2
+;
+```

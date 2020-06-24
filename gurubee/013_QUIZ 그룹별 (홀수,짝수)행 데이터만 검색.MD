@@ -3,5 +3,69 @@
 ----
 
 ```SQL
+WITH t AS
+(
+    SELECT 1 grp, 'A' nm FROM dual
+    UNION ALL SELECT 1, 'B' FROM dual
+    UNION ALL SELECT 1, 'C' FROM dual
+    UNION ALL SELECT 2, 'D' FROM dual
+    UNION ALL SELECT 2, 'E' FROM dual
+    UNION ALL SELECT 3, 'F' FROM dual
+    UNION ALL SELECT 4, 'G' FROM dual
+    UNION ALL SELECT 4, 'H' FROM dual
+    UNION ALL SELECT 4, 'I' FROM dual
+    UNION ALL SELECT 4, 'J' FROM dual
+)
+SELECT GRP,NM
+        ,ROW_NUMBER() OVER(PARTITION BY GRP ORDER BY NM) V
+        , COUNT(*) OVER(PARTITION BY grp) cnt
+        FROM T
+;
+
+WITH t AS
+(
+    SELECT 1 grp, 'A' nm FROM dual
+    UNION ALL SELECT 1, 'B' FROM dual
+    UNION ALL SELECT 1, 'C' FROM dual
+    UNION ALL SELECT 2, 'D' FROM dual
+    UNION ALL SELECT 2, 'E' FROM dual
+    UNION ALL SELECT 3, 'F' FROM dual
+    UNION ALL SELECT 4, 'G' FROM dual
+    UNION ALL SELECT 4, 'H' FROM dual
+    UNION ALL SELECT 4, 'I' FROM dual
+    UNION ALL SELECT 4, 'J' FROM dual
+)
+SELECT GRP,DECODE(CNT,1,'',NM) NM
+    FROM(SELECT GRP,NM
+        ,ROW_NUMBER() OVER(PARTITION BY GRP ORDER BY NM) V 
+        , COUNT(*) OVER(PARTITION BY grp) cnt
+        FROM t
+      ) G_GRP
+  WHERE MOD(V,2)=0 OR CNT=1
+;
+
+
+WITH t AS
+(
+    SELECT 1 grp, 'A' nm FROM dual
+    UNION ALL SELECT 1, 'B' FROM dual
+    UNION ALL SELECT 1, 'C' FROM dual
+    UNION ALL SELECT 2, 'D' FROM dual
+    UNION ALL SELECT 2, 'E' FROM dual
+    UNION ALL SELECT 3, 'F' FROM dual
+    UNION ALL SELECT 4, 'G' FROM dual
+    UNION ALL SELECT 4, 'H' FROM dual
+    UNION ALL SELECT 4, 'I' FROM dual
+    UNION ALL SELECT 4, 'J' FROM dual
+)
+SELECT GRP,NM
+    FROM(SELECT GRP,NM
+        ,ROW_NUMBER() OVER(PARTITION BY GRP ORDER BY NM) V 
+        , COUNT(*) OVER(PARTITION BY grp) cnt
+        FROM t
+      ) G_GRP
+  WHERE MOD(V,2)=1 OR CNT=1
+;
+
 
 ```

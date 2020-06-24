@@ -2,4 +2,4 @@
 ORACLE QUIZ 풀며 실전 능력 기르기!!
 
 이하 모든 출처는
-http://www.gurubee.net/
+http://www.gurubee.net/sql/quiz

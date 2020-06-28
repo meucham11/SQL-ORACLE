@@ -72,5 +72,7 @@ SELECT MIN(DECODE(MOD(rn, 4), 1, v)) v1
 ```
 
 |1단계|2단계 |3단계|4단계|
-----
+| ---------- | :--------- | :----------: | ----------: |
+
+출처: https://poorman.tistory.com/352 [poorman]
 |<img width="33" alt="1" src="https://user-images.githubusercontent.com/34879309/85936360-dfa82c80-b934-11ea-8989-cc1894ed21e1.PNG">|<img width="92" alt="2" src="https://user-images.githubusercontent.com/34879309/85936361-e040c300-b934-11ea-8d51-3c31bf9e5dfe.PNG">|<img width="67" alt="3" src="https://user-images.githubusercontent.com/34879309/85936362-e171f000-b934-11ea-9427-da85953c548e.PNG">|<img width="130" alt="4" src="https://user-images.githubusercontent.com/34879309/85936363-e20a8680-b934-11ea-91cf-d7d002569a38.PNG">|

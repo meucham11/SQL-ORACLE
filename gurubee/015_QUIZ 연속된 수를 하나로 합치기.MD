@@ -70,3 +70,5 @@ SELECT MIN(DECODE(MOD(rn, 4), 1, v)) v1
 ;
 
 ```
+
+|DD |DD |

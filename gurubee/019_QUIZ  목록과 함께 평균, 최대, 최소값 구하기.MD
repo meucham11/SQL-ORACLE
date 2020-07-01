@@ -24,3 +24,8 @@ SELECT DT
   HAVING NOT(YN='N' AND GROUPING_ID(YN,DT)=1)
   ORDER BY DT,YN,GID
 ```
+
+
+```SQL
+--2단계 : 계산
+```

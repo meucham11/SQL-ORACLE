@@ -43,3 +43,22 @@ SELECT DT
   HAVING NOT(YN='N' AND GROUPING_ID(YN,DT)=1)
   ORDER BY DT,YN,GID
 ```
+
+```SQL
+-- DT 빈칸 채워주기
+SELECT NVL(dt, NVL(yn, '전체') ||' '||
+       DECODE(GROUP_ID(), 0, '평균값', 1, '최대값', 2, '최소값')) dt
+      ,DECODE(GROUP_ID(),0,AVG(V1),1,MAX(V1),2,MIN(V1)) V1
+      ,DECODE(GROUP_ID(),0,AVG(V2),1,MAX(V2),2,MIN(V2)) V1
+      ,DECODE(GROUP_ID(),0,AVG(V3),1,MAX(V3),2,MIN(V3)) V3
+      ,DECODE(GROUP_ID(),0,AVG(V4),1,MAX(V4),2,MIN(V4)) V4
+      ,YN
+      ,GROUP_ID() GID
+      ,GROUPING(YN) G_YN
+      ,GROUPING(DT) G_DT
+      ,GROUPING_ID(YN,DT) GPING_ID
+    FROM T
+  GROUP BY 1, ROLLUP(1,1,YN,1,1,DT)
+  HAVING NOT(YN='N' AND GROUPING_ID(YN,DT)=1)
+  ORDER BY DT,YN,GID
+```

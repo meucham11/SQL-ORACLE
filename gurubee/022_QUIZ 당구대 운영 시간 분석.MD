@@ -2,6 +2,10 @@
 
 ----
 
+```
+두 열을 한열로 하는 방법 익숙해져 가는것 같다.
+```
+
 ```SQL
 SELECT stm, etm, cnt
      , SUM( TO_DATE(etm, 'hh24:mi')

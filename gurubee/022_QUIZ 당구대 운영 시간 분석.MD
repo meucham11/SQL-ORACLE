@@ -7,25 +7,18 @@
 ```
 
 ```SQL
-SELECT stm, etm, cnt
-     , SUM( TO_DATE(etm, 'hh24:mi')
-          - TO_DATE(stm, 'hh24:mi')
-          )*24*60 use_time 
-  FROM (SELECT stm
-             , SUM(cnt) OVER(ORDER BY stm) cnt
-             , LEAD(stm, 1, '21:00')
-               OVER(ORDER BY stm) etm
-          FROM (SELECT '11:00' stm, 0 cnt FROM dual
-                 UNION ALL
-                SELECT DECODE(s, 1, stm, etm) stm
-                     , SUM(s) cnt
-                  FROM t
-                     , (SELECT 3-LEVEL*2 s FROM dual
-                         CONNECT BY LEVEL < = 2)
-                 GROUP BY DECODE(s, 1, stm, etm)
-                )
-        )
- GROUP BY cnt, ROLLUP((stm, etm))
- ORDER BY stm, cnt
-;
+SELECT POINT STR
+      ,NVL(LEAD(POINT) OVER(ORDER BY POINT),'21:00') END 
+      ,SUM(TOTAL) OVER(ORDER BY POINT) S_CNT
+    FROM(SELECT '11:00' POINT, 0 TOTAL FROM DUAL   
+         UNION ALL
+        SELECT 
+              DECODE(CNT,1,STM,ETM) POINT
+              ,SUM(CNT) TOTAL
+            FROM T
+                ,(SELECT DECODE(LEVEL,2,-1,1) CNT FROM DUAL CONNECT BY LEVEL <=2)
+          GROUP BY(DECODE(CNT,1,STM,ETM))
+          ORDER BY POINT
+          )
 ```
+<img width="109" alt="1" src="https://user-images.githubusercontent.com/34879309/86524086-ff999c00-beb0-11ea-94f1-5114f2b5816a.PNG">

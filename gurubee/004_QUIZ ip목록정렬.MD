@@ -25,3 +25,10 @@ SELECT ROWNUM RN,
 ```
 
 복습완료
+
+```SQL
+SELECT ROWNUM RN
+      ,REGEXP_REPLACE(REPLACE('.'||IP,'.','.00'),'([^.]{3}(\.|$))|.','\1') D1
+    FROM T
+    ORDER BY D1
+```

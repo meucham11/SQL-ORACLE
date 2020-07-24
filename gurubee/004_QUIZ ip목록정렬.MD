@@ -23,3 +23,5 @@ SELECT ROWNUM RN,
         )
   ORDER BY D1,D2,D3,D4;
 ```
+
+복습완료

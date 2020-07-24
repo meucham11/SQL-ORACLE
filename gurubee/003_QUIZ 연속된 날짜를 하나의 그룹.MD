@@ -32,3 +32,5 @@ SELECT NO,
     FROM (SELECT * FROM T ORDER BY NO, DT)
     GROUP BY NO, TO_DATE(DT, 'yyyymmdd') - ROWNUM
 ```
+
+복습 완료

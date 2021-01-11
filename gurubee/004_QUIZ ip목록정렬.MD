@@ -25,7 +25,8 @@ SELECT ROWNUM RN,
 ```
 
 복습완료
-
+</BR>
+복습완료2
 ```SQL
 SELECT ROWNUM RN
       ,REGEXP_REPLACE(REPLACE('.'||IP,'.','.00'),'([^.]{3}(\.|$))|.','\1') D1

@@ -33,5 +33,5 @@ SELECT NO,
     GROUP BY NO, TO_DATE(DT, 'yyyymmdd') - ROWNUM
 ```
 
-복습 완료
+복습 완료 </br>
 복습 완료2

@@ -33,3 +33,6 @@ SELECT AMT,V
     FROM (SELECT AMT, LPAD(AMT,16,'0') V FROM T)
 ;
 ```
+
+
+복습완료 21.06.29

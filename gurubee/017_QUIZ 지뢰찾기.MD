@@ -45,3 +45,7 @@ SELECT
 |1단계|2단계|3단계|4단계|5단계|
 |---:|---:|---:|---:|---:|
 |<img width="47" alt="1" src="https://user-images.githubusercontent.com/34879309/85977286-4f8ee380-ba17-11ea-8db7-54fec2065cb7.PNG">|<img width="63" alt="2" src="https://user-images.githubusercontent.com/34879309/85977421-8cf37100-ba17-11ea-9552-eab7d0f8c7d0.PNG">|<img width="112" alt="3" src="https://user-images.githubusercontent.com/34879309/85977424-8e249e00-ba17-11ea-8448-3e6400171d3e.PNG">|<img width="340" alt="4" src="https://user-images.githubusercontent.com/34879309/85977427-8f55cb00-ba17-11ea-811d-87cdf3181960.PNG">|<img width="199" alt="5" src="https://user-images.githubusercontent.com/34879309/85977429-9086f800-ba17-11ea-881f-24ceddb884c1.PNG">|
+
+
+
+복습완료 2021.07.15

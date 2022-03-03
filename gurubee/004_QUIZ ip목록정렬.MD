@@ -33,3 +33,13 @@ SELECT ROWNUM RN
     FROM T
     ORDER BY D1
 ```
+
+복습완료3
+SELECT
+	ROWNUM NO
+	,IP
+FROM T
+ORDER BY LPAD(SUBSTR(IP,1,INSTR(IP,'.',1,1)-1),3,'0')||'.'||
+	SUBSTR(IP,INSTR(IP,'.',1,1)+1,INSTR(IP,'.',1,2)-INSTR(IP,'.',1,1)-1)||'.'||
+	SUBSTR(IP,INSTR(IP,'.',1,2)+1,INSTR(IP,'.',1,3)-INSTR(IP,'.',1,2)-1)||'.'||
+	SUBSTR(IP,INSTR(IP,'.',1,3)+1);

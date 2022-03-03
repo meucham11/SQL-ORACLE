@@ -21,3 +21,4 @@ SELECT EMPNO, ENAME, LEVEL, MGR
 
 
 복습완료 21.06.29
+복습완료 22.03.03

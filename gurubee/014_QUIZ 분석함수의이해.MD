@@ -27,6 +27,7 @@ SELECT YYYYMM, AMT
 				ROWS BETWEEN 1 FOLLOWING
 						AND 3 FOLLOWING) P2
 FROM T;
+-- 결과는 같은데 날짜가 연속형이 아니라면 개월 단위로 뽑는것이 아니기 때문에 첫번째 쿼리가 맞을듯
 ```
 <img width="185" alt="1" src="https://user-images.githubusercontent.com/34879309/85917684-33643880-b897-11ea-8ce9-078713020a7d.PNG">
 
@@ -47,3 +48,5 @@ SELECT T1.YYYYMM, T1.AMT
 
 
 복습완료 2021.07.13
+</BR>
+복습완료 2022.03.04

@@ -23,6 +23,9 @@ SELECT YYYYMM, AMT
 , SUM(AMT) OVER(ORDER BY TO_DATE(yyyymm,'yyyymm')
 				ROWS BETWEEN 3 PRECEDING  
 						AND 1 PRECEDING) P1
+, SUM(AMT) OVER(ORDER BY TO_DATE(yyyymm,'yyyymm')
+				ROWS BETWEEN 1 FOLLOWING
+						AND 3 FOLLOWING) P2
 FROM T;
 ```
 <img width="185" alt="1" src="https://user-images.githubusercontent.com/34879309/85917684-33643880-b897-11ea-8ce9-078713020a7d.PNG">
